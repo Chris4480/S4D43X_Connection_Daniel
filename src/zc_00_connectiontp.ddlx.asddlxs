@@ -1,0 +1,61 @@
+@Metadata.layer: #CUSTOMER
+
+@UI.headerInfo.typeName: 'Connection'
+@UI.headerInfo.typeNamePlural: 'Connections'
+@UI.headerInfo.title.value: 'CarrierID'
+@UI.headerInfo.description.value: 'ConnectionID'
+annotate view ZC_00_ConnectionTP with
+{
+  // Facets
+  @UI.facet: [
+    { type: #IDENTIFICATION_REFERENCE, label: 'General Information', position: 10 },
+    { type: #LINEITEM_REFERENCE, label: 'Flights', position: 20, targetElement: '_Flights' }
+  ]
+
+  // Actions
+  @UI.lineItem: [
+    { position: 10, type: #FOR_ACTION, label: 'Switch Planetype', dataAction: 'BOPF:SWITCH_PLANETYPE' },
+
+  // Fields
+    { position: 10 }]
+  @UI.selectionField: [{ position: 10 }]
+  @UI.identification: [{ position: 10 }]
+  CarrierID;
+
+  @UI.lineItem: [{ position: 20 }]
+  @UI.selectionField: [{ position: 20 }]
+  @UI.identification: [{ position: 20 }]
+  ConnectionID;
+
+  //  CountryFrom;
+
+  @UI.lineItem: [{ position: 30 }]
+  @UI.identification: [{ position: 30 }]
+  CityFrom;
+
+  //  AirportFrom;
+
+  //  CountryTo;
+
+  @UI.lineItem: [{ position: 40 }]
+  @UI.identification: [{ position: 40 }]
+  CityTo;
+
+  //  AirportTo;
+
+  //  DepartureTime;
+
+  //  ArrivalTime;
+
+  @UI.lineItem: [{ position: 50 }]
+  Distance;
+
+  //  DistanceUnit;
+
+  //  FlightType;
+
+  //  Period;
+
+  //  _Flights;
+
+}
